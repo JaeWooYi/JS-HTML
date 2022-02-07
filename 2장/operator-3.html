@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator</title>
+</head>
+<body>
+    <script>
+        var num = 10;
+
+        // 증감연산자를 사용
+        alert(num++);   // 1. 후위 증가연산 -> ;가 끝나야 ++을 한다
+        alert(++num);   // 2. 전위 증가연산 -> 그래서 12가 나온다. (윗줄 세미콜론에서 11이 되었기 때문)
+        alert(num++);   // 3. 최종적으로 12 가 된다. 이유는 1.과 같음
+        document.write(num);    // 4. 최종적으로 13이 찍힌다. (윗줄 ;가 끝남과 동시에 +1이 되기 때문)
+    </script>
+</body>
+</html>
