@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if문-6</title>
+</head>
+<body>
+    <script>
+        // 사용자로부터 입력받는 부분
+        var rank = window.prompt("Enter your rank. 1_부장, 2_차장, 3_과장, 4_대리, 5_사원");
+
+        // switck문은 한정된 데이터 내에서만 사용합니다.
+        // 직급 비교
+        // break 없으면 입력한 부분 아래에 있는 내용 전부 출력된다.
+        switch(rank){
+            case "1" : document.write("<p>The manager's salary is <strong>7 million won.");
+                break;
+            case "2" : document.write("<p>The conductor's salary is <strong>6 million won.");
+                break;
+            case "3" : document.write("<p>The exaggeration's salary is <strong>5 million won.");
+                break;
+            case "4" : document.write("<p>The deputy's salary is <strong>4 million won.");
+                break;
+            case "5" : document.write("<p>The employee's salary is <strong>3 million won.");
+                break;
+            default : alert("You entered it wrong..")
+        }
+    </script>
+</body>
+</html>

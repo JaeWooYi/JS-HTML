@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if문-2</title>
+</head>
+<body>
+    <script>
+        // 짝수 검사 프로그램
+        var value = window.prompt("Please, enter a number!");
+        alert(typeof(value));   //-> 리턴타입 확인용
+        // 숫자로 형변환 // prompt가 string으로 return하기 때문
+        value = parseInt(value);
+        alert(typeof(value));   //-> 리턴타입 확인용  
+
+        if(value % 2 == 0){
+            alert(value + " is an even number");
+        }else{ 
+            alert(value + " is odd number");
+        }
+
+    </script>
+</body>
+</html>
