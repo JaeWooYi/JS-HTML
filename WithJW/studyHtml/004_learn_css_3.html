@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <style type="text/css">
+            #item1 {
+                width: 100px;
+                height: 100px;
+
+                /* RGB값으로 줄수 있다. ex) rgb(255, 0, 0); */
+                /* 16진수로도 가능 ex) #ff0000 */
+                background-color: red;
+                color: white;   
+            }
+            #item2 {
+                width: 100px;
+                height: 100px;
+                color: blue;
+                font-size: 32px;
+                background-color: yellow;
+                font-weight: bold;
+            }
+            #item-list {
+                height: 50%;
+                background-color: bisque;
+                padding: 50px;
+                border: 10px solid;
+                border-color: red;
+            }
+            #item-list > #item3 {
+                margin: 32px;
+                height: 100px;
+                width: 100px;
+                background-color: brown;
+                color: aqua;
+            }
+            #item-list > #item4 {
+                margin: 16px;
+                background-color: blueviolet;
+                color: aquamarine;
+                padding: 16px;
+                height: 100px;
+                width: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="item1">1 Item</div><br/>
+        <div id="item2">2 Item</div><br/>
+        <div id="item-list">
+            <div id="item3">3 Item</div><br/>
+            <div id="item4">4 Item</div>
+        </div>
+    </body>
+</html>
