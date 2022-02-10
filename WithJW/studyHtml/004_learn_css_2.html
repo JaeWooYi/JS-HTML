@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <style type="text/css">
+            /* 하위 선택자 */
+            #item_list p{
+                color: red;
+            }
+            /* 자식 선택자 */
+            #item_list > p {
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="item_list">
+            <p>first child1</p>
+            <p>first child2</p>
+            <div>
+            <p>second child1</p>
+            <p>second child2</p>
+            </div>
+        </div>
+    </body>
+</html>
