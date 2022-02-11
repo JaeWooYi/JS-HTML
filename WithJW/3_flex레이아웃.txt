@@ -1,0 +1,17 @@
+FLEX 레이아웃
+1. 기존에 div요소는 줄바꿈이 되어 수직으로 배치가되는데, 수평적으로 배치한다.
+2. 자식을 부모 기준 가운데 정렬을 한다.
+
+Flex의 기본
+ - container(부모)와 item(자식)을 통해 정렬.
+ - 부모 : 속성 -> display: flex
+
+justify-contents 속성
+ - 아이템 정렬 방향(by flex-direction)과 같은 방향으로 아이템의 여백을 관리할 때 설정.
+ - flex-direction이 row일 시 수평, flex-direction이 column이면 수직으로 배치.
+ - 기본값 : flex-start
+
+align-items
+ - 아이템 정렬 방향(by flex-direction)과 수직 방향으로 아이템의 여백을 관리 할때 설정.
+ - flex-direction이 row면 수직으로, flex-direction이 column이면 수평으로 배치.
+ - 기본 값은 stretch이다.
