@@ -1,0 +1,21 @@
+#header {
+  height: 64px;
+  background-color: black;
+}
+
+#body {
+  height: 100%;
+  background-color: blue;
+  width: 1024px;
+  margin: 0 auto; /* 자식이 부모를 기준으로 정렬 할때 margin: 0 auto;를 사용한다*/
+}
+
+#footer {
+  height: 200px;
+  background-color: red;
+}
+
+#banner {
+  height: 300px;
+  background-color: yellow;
+}
