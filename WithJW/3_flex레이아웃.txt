@@ -15,3 +15,15 @@ align-items
  - 아이템 정렬 방향(by flex-direction)과 수직 방향으로 아이템의 여백을 관리 할때 설정.
  - flex-direction이 row면 수직으로, flex-direction이 column이면 수평으로 배치.
  - 기본 값은 stretch이다.
+
+
+
+ 아이템(자식) 속성
+ 1. flex-basis
+ - 자식의 최소 너비 ( 수직정렬일 때는 높이 )
+ 2. flex-grow
+ - 다른 아이템과 비교해서 해당 비율로 여백을 가진다
+ 3. flex-shrink
+  - 다른 아이템들과 비교해서 해당 비율로 줄어든다.
+  - 기본값은 1.
+  - 계산이 복잡해 실제로는 많이 안쓰인다.
