@@ -37,3 +37,16 @@ var nope1 = false;
 var yes1= true;
 console.log(nope1 || yes1); // 앞이 false니까 true
 console.log(nope1 && yes1); // 앞이 false니까 false
+
+// ex)
+var products = [{
+    name3 : '농구공',
+    description : 'JW가 쓰던 농구공',
+    price : 10000
+}, {
+    name3 : '축구공',
+    description : 'JW가 쓰던 축구공',
+    price : 20000
+}]
+// 위 배열에서 products의 길이가 1개 이상이면서 첫번째 상품 객체의 name이 '축구공'인지를 확인하는 연산자를 작성해 보아라.
+console.log(products.length > 1 && products[0].name3 === '축구공'); // 앞은 true, 뒤는 false -> false가 나온다.
