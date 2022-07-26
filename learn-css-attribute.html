@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <style type="text/css">
+      #item1 {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(255, 0, 0);
+        color: white; /* 칼라는 텍스트 색 결정 */
+      }
+      #item2 {
+        width: 100px;
+        height: 100px;
+        color: blue;
+        font-size: 32px;
+        font-weight: bold;
+      }
+      #item-list {
+        height: 200px;
+        background-color: gray;
+      }
+
+      /* margin : 자기 바깥쪽에서 여백을 준다. */
+      #item-list > #item3 {
+        margin: 32px;
+        background-color: yellow;
+      }
+
+      /* padding : 자기 안쪽에서 여백을 준다. 상하좌우 모두 */
+      #item-list > #item4 {
+        padding: 32px;
+        background-color: green;
+        border: 5px solid blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="item1">1 item</div>
+    <div id="item2">2 item</div>
+    <div id="item-list">
+      <div id="item3">3 item</div>
+      <div id="item4">4 item</div>
+    </div>
+  </body>
+</html>
