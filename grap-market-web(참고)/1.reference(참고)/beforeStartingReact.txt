@@ -2,3 +2,4 @@
   1) npm install -g create-react-app
    ** 나같은 경우는 tar2.2오류가 나서 npx create-react-app grap-market-web로 만들었음.
   2) 후에 경로 들어가(grap-market-web) create-react-app .       -> .은 현재 경로를 의미함 
+2. 실행할때는 해당 경로 들어가서 터미널에서 npm start하면 되.
