@@ -3,6 +3,13 @@ import "./App.css";
 import ChildComponent from "./JWtest/child1.js";
 
 function App() {
+  const text = "HI HI HI Hi HI";
+  const text2 = function () {
+    return <h3>HI2 HI2 HI2 HI2 HI2</h3>;
+  };
+  const sayReact = function () {
+    alert("React Good");
+  };
   return (
     // <div className="App">
     //   <header className="App-header">
@@ -26,6 +33,9 @@ function App() {
       <ChildComponent />
       <ChildComponent />
       <ChildComponent />
+      <h2>{text}</h2>
+      {text2()}
+      <div onClick={sayReact}>Click!!</div>
     </div>
   );
 }
