@@ -30,9 +30,9 @@ function App() {
 
     <div>
       <h1>abcd Test</h1>
-      <ChildComponent />
-      <ChildComponent />
-      <ChildComponent />
+      <ChildComponent name="Me" age={100} />
+      <ChildComponent name="Me2" age={200} />
+      <ChildComponent name="Me3" age={300} />
       <h2>{text}</h2>
       {text2()}
       <div onClick={sayReact}>Click!!</div>
