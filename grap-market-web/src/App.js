@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import ChildComponent from "./JWtest/child1.js";
+import TimerComponent from "./JWtest/timer2";
 
 function App() {
   const text = "HI HI HI Hi HI";
@@ -36,6 +37,10 @@ function App() {
       <h2>{text}</h2>
       {text2()}
       <div onClick={sayReact}>Click!!</div>
+      <br />
+      <br />
+      <br />
+      <TimerComponent />
     </div>
   );
 }
