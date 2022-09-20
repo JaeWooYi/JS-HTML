@@ -1,5 +1,8 @@
-function ProdcutPage() {
-  return <h1>Prodcut Page!!</h1>;
+import { useParams } from "react-router-dom";
+
+function ProductPage() {
+  const { id } = useParams();
+  return <h1>Prodcut Page {id} Product!!</h1>;
 }
 
-export default ProdcutPage;
+export default ProductPage;

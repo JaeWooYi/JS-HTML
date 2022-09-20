@@ -1,6 +1,7 @@
 import "./index.css"; // 현재 있는 위치에서(index.js안에있으니까), 또 css같은경우 따로 from을 적지 않는다.
 import axious from "axios";
 import React from "react";
+import { Link } from "react-router-dom";
 
 function MainPage() {
   const [products, setProducts] = React.useState([]);
@@ -34,23 +35,25 @@ function MainPage() {
         <div id="product-list">
           {products.map(function (product, index) {
             return (
-              <div classNaem="product-card">
-                <div>
-                  <img classNaem="product-img" src={product.imageUrl} />
-                </div>
-                <div>
-                  <div classNaem="product-contents">
-                    <span classNaem="product-name">{product.name}</span>
-                    <span classNaem="product-price">{product.price}</span>
-                    <div classNaem="product-seller">
-                      <img
-                        classNaem="product-avatar"
-                        src="images/icons/avatar.png"
-                      />
-                      <span>{product.seller}</span>
+              <div className="product-card">
+                <Link className="product-link" to={`/products/${index}`}>
+                  <div>
+                    <img className="product-img" src={product.imageUrl} />
+                  </div>
+                  <div>
+                    <div className="product-contents">
+                      <span className="product-name">{product.name}</span>
+                      <span className="product-price">{product.price}</span>
+                      <div className="product-seller">
+                        <img
+                          className="product-avatar"
+                          src="images/icons/avatar.png"
+                        />
+                        <span>{product.seller}</span>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
             );
           })}
