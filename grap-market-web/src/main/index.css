@@ -1,48 +1,11 @@
-/* 기본적인 태그 및 모든 태그들에 마진패딩 붙어있는거 지우는거 귀찮자나 아래처럼 하면되 */
-* {
-  margin: 0;
-  padding: 0;
-}
-
 /* body {
   margin: 0;
   padding: 0;
 } */
 
-#header {
-  height: 64px;
-  display: flex;
-  justify-content: center;
-  border-bottom: 1px solid gray;
-}
-
-#body {
-  height: 100vh;
-  width: 1024px;
-  margin: 0 auto;
-  padding-bottom: 24px;
-}
-
-#footer {
-  height: 200px;
-  background-color: rgb(230, 230, 230);
-}
-
 #banner {
   height: 300px;
   background-color: yellow;
-}
-
-#header-area {
-  width: 1024px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-#header-area > img {
-  width: 128px;
-  height: 36px;
 }
 
 #banner > img {
@@ -82,7 +45,7 @@
 
 .product-name {
   font-size: 14px;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .prodcut-price {
