@@ -9,10 +9,11 @@ function ProductPage() {
   useEffect(function () {
     axios
       .get(
-        `https://4dfcb0c6-21f6-45ec-b9c9-2c959574210f.mock.pstmn.io/products/${id}`
+        // `https://4dfcb0c6-21f6-45ec-b9c9-2c959574210f.mock.pstmn.io/products/${id}`
+        `http://localhost:8070/products/${id}`
       )
       .then(function (result) {
-        setProduct(result.data);
+        setProduct(result.data.product);
       })
       .catch(function (error) {
         console.log(error);
