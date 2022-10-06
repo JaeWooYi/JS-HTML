@@ -1,10 +1,38 @@
-import { Divider, Form, Input, InputNumber, Button } from "antd";
+import { Divider, Form, Input, InputNumber, Button, Upload } from "antd";
 import FormItem from "antd/es/form/FormItem";
+import { useState } from "react";
 import "./index.css";
+import { API_URL } from "../config/constants.js";
+import axios from "axios";
 
 function UploadPage() {
+  const [imageUrl, setImageUrl] = useState(null);
   const onSubmit = values => {
-    console.log(values);
+    axios
+      .post(`${API_URL}/products`, {
+        name: values.name,
+        description: values.description,
+        seller: values.seller,
+        price: parseInt(values.price),
+        imageUrl: imageUrl,
+      })
+      .then(result => {
+        console.log(result);
+      })
+      .catch(function (error) {
+        console.log("ERROR!!!! ---> " + error);
+      });
+  };
+
+  const onChangeImage = info => {
+    if (info.file.status === "uploading") {
+      return;
+    }
+    if (info.file.status === "done") {
+      const response = info.file.response;
+      const imageUrl = response.imageUrl;
+      setImageUrl(imageUrl);
+    }
   };
 
   return (
@@ -14,10 +42,22 @@ function UploadPage() {
           name="upload"
           label={<div className="upload-label">Product Photo</div>}
         >
-          <div id="upload-img-placeholder">
-            <img src="/images/icons/camera.png" />
-            <span>Image Upload Please..</span>
-          </div>
+          <Upload
+            name="image"
+            action={`${API_URL}/image`}
+            listType="picture"
+            showUploadList={false}
+            onChange={onChangeImage}
+          >
+            {imageUrl ? (
+              <img id="upload-img" src={`${API_URL}/${imageUrl}`} />
+            ) : (
+              <div id="upload-img-placeholder">
+                <img src="/images/icons/camera.png" />
+                <span>Image Upload Please..</span>
+              </div>
+            )}
+          </Upload>
         </Form.Item>
         <Divider />
 
@@ -50,7 +90,7 @@ function UploadPage() {
           label={<div className="upload-label">Product Price</div>}
           rules={[{ required: true, message: "Input Product Price Please.." }]}
         >
-          <InputNumber className="upload-price" size="large" defaultValue={0} />
+          <InputNumber defaultValue={0} className="upload-price" size="large" />
         </Form.Item>
         <Divider />
 
@@ -71,7 +111,7 @@ function UploadPage() {
 
         <Form.Item>
           <Button id="submit-button" size="large" htmlType="submit">
-            Problem Register
+            Register
           </Button>
         </Form.Item>
       </Form>

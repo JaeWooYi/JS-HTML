@@ -4,6 +4,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
+import { API_URL } from "../config/constants.js";
 
 dayjs.extend(relativeTime);
 
@@ -11,10 +12,7 @@ function MainPage() {
   const [products, setProducts] = React.useState([]);
   React.useEffect(function () {
     axious
-      .get(
-        // "https://4dfcb0c6-21f6-45ec-b9c9-2c959574210f.mock.pstmn.io/products"
-        "http://localhost:8070/products"
-      )
+      .get(`${API_URL}/products`)
       .then(function (result) {
         const products = result.data.products;
         console.log("RESULT!! ---> " + result);
