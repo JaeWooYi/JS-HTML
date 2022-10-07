@@ -1,12 +1,23 @@
-import { Divider, Form, Input, InputNumber, Button, Upload } from "antd";
+import {
+  Divider,
+  Form,
+  Input,
+  InputNumber,
+  Button,
+  Upload,
+  message,
+} from "antd";
 import FormItem from "antd/es/form/FormItem";
 import { useState } from "react";
 import "./index.css";
 import { API_URL } from "../config/constants.js";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 function UploadPage() {
   const [imageUrl, setImageUrl] = useState(null);
+  const history = useHistory();
+
   const onSubmit = values => {
     axios
       .post(`${API_URL}/products`, {
@@ -18,9 +29,11 @@ function UploadPage() {
       })
       .then(result => {
         console.log(result);
+        history.replace("/");
       })
       .catch(function (error) {
         console.log("ERROR!!!! ---> " + error);
+        message.error(`ERROR! ${error.message}`);
       });
   };
 
