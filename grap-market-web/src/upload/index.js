@@ -13,6 +13,7 @@ import "./index.css";
 import { API_URL } from "../config/constants.js";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import React, { Component } from "react";
 
 function UploadPage() {
   const [imageUrl, setImageUrl] = useState(null);
@@ -31,7 +32,7 @@ function UploadPage() {
         console.log(result);
         history.replace("/");
       })
-      .catch(function (error) {
+      .catch(function(error) {
         console.log("ERROR!!!! ---> " + error);
         message.error(`ERROR! ${error.message}`);
       });

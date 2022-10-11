@@ -4,17 +4,18 @@ import { useEffect, useState } from "react";
 import "./index.css";
 import { API_URL } from "../config/constants.js";
 import dayjs from "dayjs";
+import React, { Component } from "react";
 
 function ProductPage() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
-  useEffect(function () {
+  useEffect(function() {
     axios
       .get(`${API_URL}/products/${id}`)
-      .then(function (result) {
+      .then(function(result) {
         setProduct(result.data.product);
       })
-      .catch(function (error) {
+      .catch(function(error) {
         console.log(error);
       });
   }, []);

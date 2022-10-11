@@ -7,6 +7,7 @@ import UploadPage from "./upload/index.js";
 import ProdcutPage from "./product/index.js";
 import { Button } from "antd";
 import { DownloadOutlined } from "@ant-design/icons";
+import React, { Component } from "react";
 
 function App() {
   const history = useHistory();
@@ -20,7 +21,7 @@ function App() {
           </Link>
           <Button
             size="large"
-            onClick={function () {
+            onClick={function() {
               history.push("/upload");
             }}
             icon={<DownloadOutlined />}
