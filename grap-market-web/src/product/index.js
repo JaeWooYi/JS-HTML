@@ -5,11 +5,12 @@ import "./index.css";
 import { API_URL } from "../config/constants.js";
 import dayjs from "dayjs";
 import React, { Component } from "react";
+import { Button, message } from "antd";
 
 function ProductPage() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
-  useEffect(function() {
+  const getProduct = () => {
     axios
       .get(`${API_URL}/products/${id}`)
       .then(function(result) {
@@ -18,11 +19,27 @@ function ProductPage() {
       .catch(function(error) {
         console.log(error);
       });
+  };
+
+  useEffect(function() {
+    getProduct();
   }, []);
 
   if (product == null) {
     return <h1>Getting Prodcut Information....</h1>;
   }
+
+  const onClickPurchase = () => {
+    axios
+      .post(`${API_URL}/purchase/${id}`)
+      .then(result => {
+        message.info("구매가 완료 되었습니다.");
+        getProduct();
+      })
+      .catch(error => {
+        message.error(`Error!! ${error.message}`);
+      });
+  };
 
   return (
     <div>
@@ -39,6 +56,18 @@ function ProductPage() {
         <div id="createdAt">
           {dayjs(product.createdAt).format("YYYY/MM/DD")}
         </div>
+
+        <Button
+          disabled={product.soldout === 1 ? true : false}
+          size="large"
+          type="primary"
+          danger
+          id="purchase-button"
+          onClick={onClickPurchase}
+        >
+          재빨리 구매하기.
+        </Button>
+
         <pre id="description">{product.description}</pre>
       </div>
     </div>

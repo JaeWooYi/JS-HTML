@@ -12,15 +12,15 @@ dayjs.extend(relativeTime);
 function MainPage() {
   const [products, setProducts] = React.useState([]);
   const [banners, setBanners] = React.useState([]);
-  React.useEffect(function () {
+  React.useEffect(function() {
     axious
       .get(`${API_URL}/products`)
-      .then(function (result) {
+      .then(function(result) {
         const products = result.data.products;
         console.log("RESULT!! ---> " + result);
         setProducts(products);
       })
-      .catch(function (error) {
+      .catch(function(error) {
         console.log("ERROR!!!! ---> " + error);
       });
 
@@ -50,9 +50,10 @@ function MainPage() {
       </Carousel>
       <h1 id="product-headline">Products Sold</h1>
       <div id="product-list">
-        {products.map(function (product, index) {
+        {products.map(function(product, index) {
           return (
             <div className="product-card">
+              {product.soldout === 1 && <div className="product-blur" />}
               <Link className="product-link" to={`/products/${product.id}`}>
                 <div>
                   <img
